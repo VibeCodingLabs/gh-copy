@@ -1,0 +1,131 @@
+#!/usr/bin/env bash
+#
+# gh-copy — copy files/dirs from a GitHub repo locally without cloning.
+#
+# Drop-in SUPERSET of mislav/gh-cp (`gh cp <repo> <path> <dest>`).
+# Same positional contract; adds ref pinning, recursive directory copy,
+# manifest batch mode, and dry-run. Pure bash + `gh api` + jq (no clone).
+#
+# Repo:      VibeCodingLabs/gh-copy   ->   command `gh copy`
+# Lineage:   mislav/gh-cp (Unlicense)  ->   `gh api repos/{owner}/{repo}/contents/{path}`
+#
+# Usage:
+#   gh copy <repo> <path> [dest]                 # single file  (gh cp compatible)
+#   gh copy <repo> <path>/ <dest/>               # recursive dir (trailing slash on path)
+#   gh copy -r <ref> <repo> <path> [dest]        # pin to branch|tag|sha
+#   gh copy -m <manifest.tsv>                    # batch: repo<TAB>path<TAB>dest per line
+#   gh copy --dry-run ...                        # print planned copies, write nothing
+#   gh copy -h | --help
+#
+# Env:
+#   GH_COPY_REF   default ref when -r omitted (default: repo default branch)
+#
+set -euo pipefail
+
+PROG="gh copy"
+REF="${GH_COPY_REF:-}"
+DRY_RUN=0
+MANIFEST=""
+
+die()  { printf '%s: %s\n' "$PROG" "$*" >&2; exit 1; }
+usage() {
+  cat >&2 <<EOF
+Usage:
+  $PROG <repo> <path> [dest]              copy a single file (dest defaults to .)
+  $PROG <repo> <path>/ <dest/>            copy a directory recursively
+  $PROG -r <ref> <repo> <path> [dest]     pin to a branch, tag, or commit SHA
+  $PROG -m <manifest.tsv>                 batch copy: repo<TAB>path<TAB>dest lines
+  $PROG --dry-run ...                     show planned copies, write nothing
+
+Examples:
+  $PROG VibeCodingLabs/forge-symphony README.md .
+  $PROG -r main VibeCodingLabs/forge-symphony docs/ ./vendor/forge-symphony/docs/
+  $PROG -m primitives.tsv
+EOF
+  exit "${1:-1}"
+}
+
+command -v gh >/dev/null 2>&1 || die "GitHub CLI (gh) not found on PATH"
+command -v jq >/dev/null 2>&1 || die "jq not found on PATH"
+
+# --- arg parse ---------------------------------------------------------------
+ARGS=()
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -h|--help)     usage 0 ;;
+    --dry-run)     DRY_RUN=1; shift ;;
+    -r|--ref)      REF="${2:-}"; [ -n "$REF" ] || die "-r requires a ref"; shift 2 ;;
+    -m|--manifest) MANIFEST="${2:-}"; [ -n "$MANIFEST" ] || die "-m requires a file"; shift 2 ;;
+    --)            shift; while [ $# -gt 0 ]; do ARGS+=("$1"); shift; done ;;
+    -*)            die "unknown flag: $1" ;;
+    *)             ARGS+=("$1"); shift ;;
+  esac
+done
+
+# resolve ref query suffix once (empty => repo default branch)
+ref_qs() { [ -n "$REF" ] && printf '?ref=%s' "$REF" || printf ''; }
+
+# --- core: copy one blob -----------------------------------------------------
+# copy_file <repo> <src-path-in-repo> <dest-path-on-disk>
+copy_file() {
+  local repo="$1" src="$2" dest="$3"
+  if [ "$DRY_RUN" -eq 1 ]; then
+    printf 'DRY  %s %s -> %s\n' "$repo" "$src" "$dest"
+    return 0
+  fi
+  mkdir -p "$(dirname "$dest")"
+  # raw-accept avoids base64 + the 1MB contents-API limit
+  gh api "repos/$repo/contents/$src$(ref_qs)" \
+     -H "Accept: application/vnd.github.raw" > "$dest"
+  printf 'copy %s %s -> %s\n' "$repo" "$src" "$dest"
+}
+
+# --- core: recursive dir copy ------------------------------------------------
+# copy_dir <repo> <src-prefix> <dest-root>  (src-prefix normalized w/o trailing /)
+copy_dir() {
+  local repo="$1" prefix="${2%/}" destroot="${3%/}"
+  local ref="${REF:-}"
+  # default branch lookup only when no ref pinned
+  [ -n "$ref" ] || ref="$(gh api "repos/$repo" --jq '.default_branch')"
+  # git trees API: one call, recursive, blobs only, filtered by prefix
+  local paths
+  paths="$(gh api "repos/$repo/git/trees/$ref?recursive=1" \
+            --jq ".tree[] | select(.type==\"blob\") | .path" \
+          | grep -E "^${prefix}(/|$)" || true)"
+  [ -n "$paths" ] || die "no files under '$prefix' in $repo@$ref"
+  local p rel
+  while IFS= read -r p; do
+    rel="${p#"$prefix"/}"                       # path relative to the copied dir
+    copy_file "$repo" "$p" "$destroot/$rel"
+  done <<< "$paths"
+}
+
+# --- dispatch: manifest batch ------------------------------------------------
+if [ -n "$MANIFEST" ]; then
+  [ -f "$MANIFEST" ] || die "manifest not found: $MANIFEST"
+  # lines: repo<TAB>path<TAB>dest   (# comments and blank lines ignored)
+  while IFS=$'\t' read -r m_repo m_path m_dest || [ -n "$m_repo" ]; do
+    case "$m_repo" in ''|\#*) continue ;; esac
+    [ -n "$m_path" ] && [ -n "$m_dest" ] || die "bad manifest line: $m_repo"
+    if [ "${m_path%/}/" = "$m_path" ]; then copy_dir "$m_repo" "$m_path" "$m_dest"
+    else copy_file "$m_repo" "$m_path" "$m_dest"; fi
+  done < "$MANIFEST"
+  exit 0
+fi
+
+# --- dispatch: positional ----------------------------------------------------
+[ "${#ARGS[@]}" -ge 2 ] || usage 1
+repo="${ARGS[0]}"
+path="${ARGS[1]}"
+dest="${ARGS[2]:-.}"
+
+if [ "${path%/}/" = "$path" ]; then
+  # trailing slash => directory copy; dest defaults to ./<basename>
+  [ "$dest" = "." ] && dest="./$(basename "${path%/}")"
+  copy_dir "$repo" "$path" "$dest"
+else
+  # file copy; if dest is an existing dir (or ends in /), append basename
+  case "$dest" in */) dest="$dest$(basename "$path")" ;; esac
+  [ -d "$dest" ] && dest="$dest/$(basename "$path")"
+  copy_file "$repo" "$path" "$dest"
+fi

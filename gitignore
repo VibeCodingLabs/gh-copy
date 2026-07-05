@@ -1,0 +1,50 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+tmp/
+temp/
+
+# Local test output and copied fixtures
+test-output/
+test-results/
+coverage/
+.coverage
+.nyc_output/
+
+# Build and release artifacts
+build/
+dist/
+out/
+bin/
+
+# Package/dependency directories, if tooling is added later
+node_modules/
+vendor/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Local tool caches
+.cache/
+
+# Local manifests that may reference private repositories
+sources.local.tsv
+*.private.tsv
+
+# Backup files
+*.bak
