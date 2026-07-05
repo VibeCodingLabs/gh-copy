@@ -106,7 +106,9 @@ if [ -n "$MANIFEST" ]; then
   # lines: repo<TAB>path<TAB>dest   (# comments and blank lines ignored)
   while IFS=$'\t' read -r m_repo m_path m_dest || [ -n "$m_repo" ]; do
     case "$m_repo" in ''|\#*) continue ;; esac
-    [ -n "$m_path" ] && [ -n "$m_dest" ] || die "bad manifest line: $m_repo"
+    if [ -z "$m_path" ] || [ -z "$m_dest" ]; then
+      die "bad manifest line: $m_repo"
+    fi
     if [ "${m_path%/}/" = "$m_path" ]; then copy_dir "$m_repo" "$m_path" "$m_dest"
     else copy_file "$m_repo" "$m_path" "$m_dest"; fi
   done < "$MANIFEST"
