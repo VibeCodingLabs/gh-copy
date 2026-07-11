@@ -74,9 +74,9 @@ copy_file() {
     return 0
   fi
   mkdir -p "$(dirname "$dest")"
-  # raw-accept avoids base64 + the 1MB contents-API limit
+  # Raw media avoids base64 decoding; the Contents API supports files up to 100 MB.
   gh api "repos/$repo/contents/$src$(ref_qs)" \
-     -H "Accept: application/vnd.github.raw" > "$dest"
+   -H "Accept: application/vnd.github.raw+json" > "$dest"
   printf 'copy %s %s -> %s\n' "$repo" "$src" "$dest"
 }
 

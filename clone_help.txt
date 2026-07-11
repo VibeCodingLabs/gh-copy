@@ -1,0 +1,8 @@
+Usage: gh-copy clone-less [OPTIONS] REPO PATH [DEST]
+
+  Copy files/dirs from a GitHub repo locally without cloning. (Uses gh CLI)
+
+Options:
+  -r, --ref TEXT  Pin to a branch, tag, or commit SHA
+  --dry-run       Show planned copies, write nothing
+  --help          Show this message and exit.

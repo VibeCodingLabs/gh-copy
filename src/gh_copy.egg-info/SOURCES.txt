@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/gh_copy/__init__.py
+src/gh_copy/cli.py
+src/gh_copy/packer.py
+src/gh_copy.egg-info/PKG-INFO
+src/gh_copy.egg-info/SOURCES.txt
+src/gh_copy.egg-info/dependency_links.txt
+src/gh_copy.egg-info/entry_points.txt
+src/gh_copy.egg-info/requires.txt
+src/gh_copy.egg-info/top_level.txt
+tests/test_cli.py
+tests/test_docs.py
+tests/test_packer.py

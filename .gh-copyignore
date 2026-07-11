@@ -1,0 +1,17 @@
+# gh-copy ignore file
+# Add patterns to exclude files from being packed
+
+# Common exclusions
+node_modules/
+__pycache__/
+venv/
+.venv/
+.env
+*.lock
+*.pdf
+*.jpg
+*.png
+self_pack*.txt
+repacked_repo.txt
+*.db
+*_pack.txt
