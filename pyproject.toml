@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gh-copy"
+version = "0.1.0"
+description = "A tool to pack repositories into AI-friendly files and copy without cloning."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pathspec",
+    "tiktoken",
+    "click",
+    "rich",
+    "jinja2",
+    "pyperclip"
+]
+
+[project.scripts]
+gh-copy = "gh_copy.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

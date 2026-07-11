@@ -1,3 +1,18 @@
+Metadata-Version: 2.4
+Name: gh-copy
+Version: 0.1.0
+Summary: A tool to pack repositories into AI-friendly files and copy without cloning.
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pathspec
+Requires-Dist: tiktoken
+Requires-Dist: click
+Requires-Dist: rich
+Requires-Dist: jinja2
+Requires-Dist: pyperclip
+Dynamic: license-file
+
 # GitHub CLI
 
 `gh` is GitHub on the command line. It brings pull requests, issues, and other GitHub concepts to the terminal next to where you are already working with `git` and your code.

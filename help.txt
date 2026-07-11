@@ -1,0 +1,12 @@
+Usage: gh-copy [OPTIONS] COMMAND [ARGS]...
+
+  gh-copy: A tool to pack repositories into AI-friendly files and copy without
+  cloning.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  clone-less  Copy files/dirs from a GitHub repo locally without cloning.
+  init        Initialize a default .gh-copyignore file in the current...
+  pack

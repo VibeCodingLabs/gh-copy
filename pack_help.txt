@@ -1,0 +1,11 @@
+Usage: gh-copy pack [OPTIONS] PATH
+
+Options:
+  -o, --output PATH       Output file path
+  --style [markdown|xml]  Output formatting style
+  --template FILE         Custom Jinja2 template file
+  --remove-empty-lines    Remove empty lines from output to save tokens
+  --include TEXT          Include files matching glob patterns (e.g., '*.py')
+  --exclude TEXT          Exclude files matching glob patterns (e.g.,
+                          'tests/')
+  --help                  Show this message and exit.

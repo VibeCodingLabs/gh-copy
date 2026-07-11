@@ -1,0 +1,505 @@
+{
+  "generated_for": "VibeCodingLabs/gh-copy",
+  "tool_count": 83,
+  "connector_count": 5,
+  "tools": [
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_agent",
+      "description": "Launch an autonomous web-research job that searches, navigates, and extracts structured results.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_agent_status",
+      "description": "Poll an autonomous research job until it completes or fails.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_check_crawl_status",
+      "description": "Check the progress and results of a previously started crawl.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_crawl",
+      "description": "Crawl multiple related pages from a site with path, depth, and page limits.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_extract",
+      "description": "Extract selected fields from one or more pages into a supplied JSON schema.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_feedback",
+      "description": "Submit quality feedback for scrape, parse, map, or search jobs.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_interact",
+      "description": "Open or reuse a browser session and click, fill, navigate, or extract dynamic page content.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_interact_stop",
+      "description": "Close a Firecrawl browser-interaction session.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_map",
+      "description": "Discover indexed URLs on a website before choosing pages to scrape.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_monitor_check",
+      "description": "Read page-level changes and diffs from one monitor check.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_monitor_checks",
+      "description": "List historical executions for a monitor.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_monitor_create",
+      "description": "Create a recurring page, crawl, or web-search monitor with change detection.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_monitor_delete",
+      "description": "Permanently remove a monitor and stop its schedule.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_monitor_get",
+      "description": "Read one monitor's configuration and status.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_monitor_list",
+      "description": "List configured Firecrawl monitors.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_monitor_run",
+      "description": "Trigger a monitor immediately outside its normal schedule.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_monitor_update",
+      "description": "Patch a monitor's name, schedule, status, targets, goal, or notifications.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_parse",
+      "description": "Parse local documents such as PDF, DOCX, XLSX, or HTML into Markdown or structured JSON.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_research_inspect_paper",
+      "description": "Fetch canonical metadata for a research paper by arXiv, PMID, PMCID, or DOI identifier.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_research_read_paper",
+      "description": "Retrieve the most relevant full-text passages from a specific paper for a question.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_research_related_papers",
+      "description": "Expand from seed papers through citation and similarity relationships.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_research_search_github",
+      "description": "Search GitHub READMEs, issues, and pull-request history.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_research_search_papers",
+      "description": "Semantically search scholarly papers across supported research indexes.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_scrape",
+      "description": "Extract a single known webpage as Markdown, HTML, JSON, screenshot, links, or other formats.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_search",
+      "description": "Search the web, news, images, GitHub, research sources, or PDFs.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Firecrawl",
+      "tool": "firecrawl_search_feedback",
+      "description": "Submit search-specific relevance feedback and identify useful or missing sources.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "apply_labels_to_emails",
+      "description": "Add or remove Gmail labels by display name; optionally create missing labels.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "archive_emails",
+      "description": "Remove the INBOX label while retaining messages in Gmail.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "batch_modify_email",
+      "description": "Add or remove existing label IDs from many individual messages.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "batch_read_email",
+      "description": "Read multiple messages and their bodies in one request.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "batch_read_email_threads",
+      "description": "Read multiple conversation threads by message IDs or thread IDs.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "bulk_label_matching_emails",
+      "description": "Search server-side and label every matching message, optionally archiving them.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "create_draft",
+      "description": "Create a reviewable Gmail draft with optional HTML and attachments.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "create_label",
+      "description": "Create or retrieve a Gmail organizational label.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "delete_emails",
+      "description": "Move messages to Gmail Trash.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "forward_emails",
+      "description": "Forward messages with original attachments and an optional note.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "get_profile",
+      "description": "Read the authenticated Gmail account profile.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "list_drafts",
+      "description": "List pending Gmail drafts with summary metadata.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "list_labels",
+      "description": "List labels and their message/unread counts.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "read_attachment",
+      "description": "Download a supported attachment from a known Gmail message.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "read_email",
+      "description": "Read one message, optionally including raw MIME.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "read_email_thread",
+      "description": "Read an entire Gmail conversation thread.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "search_email_ids",
+      "description": "Return only message IDs matching a Gmail search query.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "search_emails",
+      "description": "Search Gmail and return summarized matching messages.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "send_draft",
+      "description": "Send an existing reviewed Gmail draft.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "send_email",
+      "description": "Send a new email or threaded reply immediately.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Gmail",
+      "tool": "update_draft",
+      "description": "Modify an existing draft without recreating it.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "batch_read_event",
+      "description": "Read multiple calendar events by event ID.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "create_event",
+      "description": "Create a meeting, focus block, status event, recurrence, reminders, or Google Meet.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "delete_event",
+      "description": "Delete or cancel a calendar event.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "fetch",
+      "description": "Fetch one event by ID.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "get_availability",
+      "description": "Return busy windows across one or more calendars.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "get_colors",
+      "description": "Read Google Calendar's supported calendar and event color IDs.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "get_profile",
+      "description": "Read the authenticated Calendar account profile.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "read_event",
+      "description": "Read full details for one calendar event.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "respond_event",
+      "description": "Accept, decline, or tentatively respond to an invitation.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "search",
+      "description": "Broadly search event text within an optional bounded time window.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "search_events",
+      "description": "Find candidate events using time, calendar, query, and pagination filters.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Calendar",
+      "tool": "update_event",
+      "description": "Update event details, attendees, recurrence, scope, reminders, or Meet settings.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Contacts",
+      "tool": "get_profile",
+      "description": "Read the authenticated Google account profile.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Contacts",
+      "tool": "read_contact",
+      "description": "Read one saved contact by Google resource ID.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Google_Contacts",
+      "tool": "search_contacts",
+      "description": "Find contacts or directory entries by name, email, company, or domain.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "capture_screenshot_url",
+      "description": "Capture the first screen or full page as a JPEG screenshot.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "classify_text",
+      "description": "Classify text into user-defined labels using Jina embeddings.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "deduplicate_images",
+      "description": "Select a semantically diverse subset of images with CLIP embeddings.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "deduplicate_strings",
+      "description": "Select representative, semantically diverse strings from a redundant list.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "expand_query",
+      "description": "Rewrite one search query into broader and deeper search variants.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "extract_pdf",
+      "description": "Extract figures, tables, and equations from an arXiv paper or PDF URL.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "guess_datetime_url",
+      "description": "Estimate a page's publication or last-updated timestamp.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "parallel_read_url",
+      "description": "Read and convert up to five webpages in parallel.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "parallel_search_arxiv",
+      "description": "Run up to five arXiv searches concurrently.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "parallel_search_ssrn",
+      "description": "Run up to five SSRN searches concurrently.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "parallel_search_web",
+      "description": "Run up to five web searches concurrently.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "primer",
+      "description": "Return session context such as current time, location, or network environment.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "read_url",
+      "description": "Convert one or more webpages or PDFs into clean readable Markdown.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "search_arxiv",
+      "description": "Search arXiv for technical and scientific papers.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "search_bibtex",
+      "description": "Find papers and return ready-to-use BibTeX citations.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "search_images",
+      "description": "Search the web for images and optionally return image URLs and metadata.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "search_jina_blog",
+      "description": "Search official Jina AI news and technical blog content.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "search_ssrn",
+      "description": "Search SSRN for social-science, finance, law, and business papers.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "search_web",
+      "description": "Search the current web for pages, articles, and news.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "show_api_key",
+      "description": "Debug the MCP Authorization bearer token. Treat as secret and never log or publish it.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    },
+    {
+      "connector": "Jina_AI",
+      "tool": "sort_by_relevance",
+      "description": "Rerank documents by relevance to a query using Jina Reranker.",
+      "gh_copy_role": "Use gh-copy to acquire the public repository files, examples, schemas, tests, or documentation that implement or describe this tool. gh-copy does not invoke the live MCP function by itself."
+    }
+  ]
+}

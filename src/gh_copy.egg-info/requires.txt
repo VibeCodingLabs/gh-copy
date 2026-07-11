@@ -1,0 +1,6 @@
+pathspec
+tiktoken
+click
+rich
+jinja2
+pyperclip
